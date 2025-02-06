@@ -1,0 +1,3 @@
+#!/bin/bash
+javac -d bin -cp "lib/*" src/*.java
+java -cp "bin:lib/*" App

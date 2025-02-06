@@ -1,21 +1,25 @@
 import javax.swing.JFrame;
-//32*32 px (18*20)
+
 public class App {
     public static void main(String[] args) {
         int rowCount = 21;
         int columnCount = 19;
         int tileSize = 32;
         int boardWidth = columnCount * tileSize;
-        int boardHeight = rowCount * tileSize; // Fix height calculation
+        int boardHeight = rowCount * tileSize;
 
-        JFrame frame = new JFrame("Pac Man");
+        JFrame frame = new JFrame("Pac-Man");
+        frame.setSize(boardWidth, boardHeight);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
         PacMan pacmanGame = new PacMan();
         frame.add(pacmanGame);
-        frame.pack();
-        pacmanGame.requestFocus();
+        frame.pack();  // Ensures proper sizing
+
+        pacmanGame.requestFocusInWindow(); // Requests focus correctly
+
         frame.setVisible(true);
     }
 }

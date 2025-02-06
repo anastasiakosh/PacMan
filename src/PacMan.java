@@ -1,11 +1,35 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashSet;
-import javax.swing.*;
+import java.util.Random;
 
+public class App {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Pac-Man");
+            PacMan gamePanel = new PacMan();
+            
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setResizable(false);
+            frame.add(gamePanel);
+            frame.pack(); // Adjusts window size to fit preferred panel size
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        });
+    }
+}
+
+    void requestFocus() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    void requestFocus() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 public class PacMan extends JPanel  implements ActionListener, KeyListener {
     class Block {
         int x;
